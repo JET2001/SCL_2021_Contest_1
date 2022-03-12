@@ -58,7 +58,7 @@ def create_adjacency_list(num_of_nodes):
 ## 1 3 4
 
 #two pointer: O(n^2)
-[-2, 0, 1, 3, 4, 5]
+# [-2, 0, 1, 3, 4, 5]
 
 #### ========== MAIN IMPLEMENTATION ===========
 ### O(n^2) time | O(1) space
