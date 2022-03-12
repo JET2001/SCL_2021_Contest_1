@@ -80,27 +80,27 @@ def question2(n: int, k: int, values: list):
     return shoffee
 
 ## Elusive O(n log n) attempt
-def question2_v2(n: int, k:int, values: list):
-    values = [x-k for x in values]
-    shoffee = 0
-    ## Calculate the prefix sum of the subarray
-    prefix = [0] * n
-    prefix[0] = values[0]
-    ## Loop to find the prefix sum
-    for i in range(1,n):
-        prefix[i] = values[i] + prefix[i-1]
-        if (prefix[i] >= 0): shoffee +=1
+# def question2_v2(n: int, k:int, values: list):
+#     values = [x-k for x in values]
+#     shoffee = 0
+#     ## Calculate the prefix sum of the subarray
+#     prefix = [0] * n
+#     prefix[0] = values[0]
+#     ## Loop to find the prefix sum
+#     for i in range(1,n):
+#         prefix[i] = values[i] + prefix[i-1]
+#         if (prefix[i] >= 0): shoffee +=1
 
-    if (prefix[0] >= 0): shoffee +=1
+#     if (prefix[0] >= 0): shoffee +=1
 
-    ## sort prefix sum array
-    prefix = sorted(prefix)
+#     ## sort prefix sum array
+#     prefix = sorted(prefix)
 
-    ## Loop to find upperbound for each element
-    for i in range(n):
-        shoffee += n - upper_bound(prefix, prefix[i])
+#     ## Loop to find upperbound for each element
+#     for i in range(n):
+#         shoffee += n - upper_bound(prefix, prefix[i])
 
-    return shoffee
+#     return shoffee
 
 
 
@@ -111,5 +111,5 @@ n, k = map(int, sys.stdin.readline().split()) ### template for input with test c
 ##### First line of test case
 values = list(map(int, sys.stdin.readline().split()))
 ### PRINT OUTPUT
-output = question2_v2(n, k, values) ## EDIT PARAMS
+output = question2(n, k, values) ## EDIT PARAMS
 print(output)
